@@ -8,7 +8,6 @@ set.shiftwidth = 2
 set.autoindent = true
 set.wrap = true
 set.breakindent = true
-set.showbreak = true
 set.showbreak = string.rep(" ", 2)
 set.linebreak = true
 
