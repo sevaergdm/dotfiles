@@ -68,7 +68,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}",
+    "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": "󱘖 {capacity}%",
 	"format-alt-click": "click",
@@ -144,11 +144,12 @@
     "on-click": "ghostty --config ~/.config/ghostty/config nvim -c cd ~/github.com/sevaergdm/dotfiles"
   },
   "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
+    "format-wifi": "{icon}",
+    "format-ethernet": " 󰈀",
+    "format-disconnected": " 󰤠",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "on-click": "ghostty -e nmtui >/dev/null 2>&1"
+    "on-click": "ghostty -e nmtui >/dev/null 2>&1",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
   },
   "custom/poweroff": {
     "tooltip": false,
