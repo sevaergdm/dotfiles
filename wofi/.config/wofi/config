@@ -1,0 +1,14 @@
+show=drun
+allow_images=true
+insensitive=true
+term=ghostty
+prompt=run:
+location=center
+columns=1
+lines=10
+width=500
+height=460
+font=IosevkaTerm Nerd Font Mono 12
+dpi-aware=true
+hide_scroll=true
+allow_markup=true
