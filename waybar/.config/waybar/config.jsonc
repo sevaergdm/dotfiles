@@ -16,7 +16,9 @@
     "hyprland/workspaces",
     "clock",
     "battery",
-    "network"
+    "network",
+    "mpris",
+    "custom/cava"
   ],
   "modules-center": [
     "hyprland/window"

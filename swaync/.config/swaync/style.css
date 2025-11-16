@@ -21,17 +21,23 @@ progress,
   margin: 0;
 }
 
+/*
 .gtk-gizmo,
 .gizmo,
 .adw-gizmo {
   min-height: 0;
   min-width: 0;
 }
+*/
 
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
   background: @bgc;
+}
+
+.control-center .control-center-list-placeholder {
+  opacity: 0.5;
 }
 
 .notification-row {
@@ -123,7 +129,7 @@ progress,
   font-size: 1.5rem;
 }
 
-.widget-title > button {
+.widget-title>button {
   font-size: 1rem;
   color: @borderc;
   padding: 10px;
@@ -133,7 +139,7 @@ progress,
   border-radius: 0px; /* Removed rounded corners */
 }
 
-.widget-title > button:hover {
+.widget-title>button:hover {
   background: @borderc;
   color: #282828;
 }
@@ -142,7 +148,23 @@ progress,
   margin: 10px 10px 10px 10px;
 }
 
-.widget-label > label {
+.widget-label>label {
   font-size: 1rem;
   color: @textc;
+}
+
+.widget-mpris {
+  color: @borderc;
+  padding: 5px 5px 5px 5px;
+  margin: 10px;
+  border-radius: 0px;
+}
+
+.widget-mpris>box>button {
+  border-radius: 0px;
+}
+
+.widget-mpris-player {
+  padding: 5px 5px;
+  margin: 10px;
 }
