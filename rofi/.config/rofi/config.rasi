@@ -1,4 +1,5 @@
 configuration {
+    modes: [window,drun,run,ssh,calc,filebrowser,combi];
     show-icons: true;
     font: "IosevkaTerm Nerd Font Mono 12";
     icon-theme: "Gruvbox-Plus-Dark";

@@ -3,41 +3,17 @@
 @define-color textc #282828;
 
 * {
-  font-family: "IosevkaTerm Nerd Font Mono";
+  font-family: IosevkaTerm Nerd Font Mono;
   font-weight: bold;
   font-size: 15px;
+  border-width: 3px;
+  border-color: #ebdbb2;
 }
-
-slider,
-scale,
-.slider,
-.adw-slider,
-.gdk-slider,
-progress,
-.progress {
-  min-height: 0;
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-}
-
-/*
-.gtk-gizmo,
-.gizmo,
-.adw-gizmo {
-  min-height: 0;
-  min-width: 0;
-}
-*/
 
 .control-center .notification-row:focus,
 .control-center .notification-row:hover {
   opacity: 1;
   background: @bgc;
-}
-
-.control-center .control-center-list-placeholder {
-  opacity: 0.5;
 }
 
 .notification-row {
@@ -51,7 +27,7 @@ progress,
   margin: 0px;
   border-radius: 0px; /* Removed rounded corners */
   border-width: 3px;
-  border: 3px solid @borderc;
+  border-color: #ebdbb2;
 }
 
 .notification-content {
@@ -68,7 +44,6 @@ progress,
   border-radius: 0px; /* Removed rounded corners */
   margin-top: 9px;
   margin-right: 5px;
-  border: 3px solid transparent;
 }
 
 .close-button:hover {
@@ -157,14 +132,15 @@ progress,
   color: @borderc;
   padding: 5px 5px 5px 5px;
   margin: 10px;
-  border-radius: 0px;
+  border-radius: 0px; /* Removed rounded corners */
 }
 
 .widget-mpris>box>button {
-  border-radius: 0px;
+  border-radius: 0px; /* Removed rounded corners */
 }
 
 .widget-mpris-player {
   padding: 5px 5px;
   margin: 10px;
 }
+
