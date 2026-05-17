@@ -1,16 +1,17 @@
 * {
   font-family: "IosevkaTerm Nerd Font";
   font-weight: bold;
-  font-size: 100%;
+  font-size: 20px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   min-height: 0;
-  padding: 1px;
+  padding: 0;
 }
 
 window#waybar {
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(40, 40, 40, 0.85);
   transition-property: background-color;
   transition-duration: 0.5s;
+  min-height: 48px;
 }
 
 window#waybar.hidden {
@@ -37,7 +38,6 @@ tooltip label {
   color: #ebdbb2;
 }
 
-#custom-cava
 #clock,
 #cpu,
 #mpris,
@@ -51,28 +51,29 @@ tooltip label {
 #custom-swaync {
   border-radius: 0px;
   color: #ebdbb2;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 #window {
   color: #ebdbb2;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  padding-right: 6px;
-  padding-left: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-right: 10px;
+  padding-left: 10px;
   border-radius: 0px;
 }
 
 #workspaces button {
-  margin: 1px;
+  margin: 0px;
+  font-size: 20px;
   box-shadow: none;
   text-shadow: none;
   border-radius: 0px;
-  padding-left: 6px;
-  padding-right: 6px;
+  padding-left: 8px;
+  padding-right: 8px;
   background-color: #ebdbb2;
   color: #282828;
 }

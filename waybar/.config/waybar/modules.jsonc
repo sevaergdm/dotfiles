@@ -71,15 +71,15 @@
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": "󱘖 {capacity}%",
-	"format-alt-click": "click",
-	"format-full": "{icon} Full",
-	"format-alt": "{icon} {time}",
-	"format-icons": [
-		"󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
-	],
-	"format-time": "{H}h {M}min",
-	"tooltip": true,
-	"tooltip-format": "{timeTo} {power}w"
+	  "format-alt-click": "click",
+	  //"format-full": "{icon} Full",
+	  "format-alt": "{icon} {time}",
+	  "format-icons": [
+		  "󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"
+	  ],
+	  "format-time": "{H}h {M}min",
+	  "tooltip": true,
+	  "tooltip-format": "{timeTo} {power}w"
   },
   "memory": {
     "interval": 10,
@@ -137,11 +137,6 @@
     "on-click": "sleep 0.1 && swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
-  },
-  "custom/cava": {
-    "exec": "~/.config/waybar/scripts/waybarCava.sh",
-    "format": "{}",
-    "on-click": "ghostty --config ~/.config/ghostty/config nvim -c cd ~/github.com/sevaergdm/dotfiles"
   },
   "network": {
     "format-wifi": "{icon}",

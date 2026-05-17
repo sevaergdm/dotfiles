@@ -1,102 +1,77 @@
-return {
-	{
-		"mason-org/mason.nvim",
-		opts = {},
-	},
-	{
-		"mason-org/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = {
-				"lua_ls",
-				"bashls",
-				"clangd",
-				"dockerls",
-				"gopls",
-				"pyright",
-				"jsonls",
-				"vimls",
-				"sqls",
-				"terraformls",
-				"tflint",
-				"ocamllsp",
-        "zls",
-			},
-		},
-		dependencies = {
-			{ "mason-org/mason.nvim", opts = {} },
-			"neovim/nvim-lspconfig",
-		},
-	},
-	{
-		"neovim/nvim-lspconfig",
-		config = function()
-			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			local lspconfig = require("lspconfig")
-			local mason_lspconfig = require("mason-lspconfig")
+vim.pack.add({
+  { src = "https://github.com/mason-org/mason.nvim" },
+  { src = "https://github.com/mason-org/mason-lspconfig.nvim" },
+  { src = "https://github.com/neovim/nvim-lspconfig" },
+  {
+    src = "https://github.com/Saghen/blink.cmp",
+    version = vim.version.range("1"),
+  },
+  { src = "https://github.com/rafamadriz/friendly-snippets" },
+})
 
-			mason_lspconfig.setup({
-				on_attach = function(client)
-					client.server_capabilities.documentFormattingProvider = true
-					vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-					vim.keymap.set("n", "gd", "vim.lsp.buf.definition", {})
-					vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-				end,
-				handlers = {
-					gopls = function()
-						lspconfig.gopls.setup({
-							capabilities = capabilities,
-							settings = {
-								gopls = {
-									staticcheck = false,
-								},
-							},
-						})
-					end,
-					terraformls = function()
-						lspconfig.terraformls.setup({
-							capabilities = capabilities,
-							settings = {
-								["terraformls"] = {
-									formatting = {
-										timeout_ms = 5000,
-									},
-								},
-							},
-						})
-					end,
-					ocamllsp = function()
-						lspconfig.ocamllsp.setup({
-							capablities = capabilities,
-							cmd = { "ocamllsp" },
-							filetypes = {
-								"ocaml",
-								"ocaml.menhir",
-								"ocaml.interface",
-								"ocaml.ocamllex",
-								"reason",
-								"dune",
-							},
-							root_dir = lspconfig.util.root_pattern(
-								"*.opam",
-								"esy.json",
-								"package.json",
-								".git",
-								"dune-project",
-								"dune-workspace"
-							),
-						})
-					end,
-          zls = function()
-            lspconfig.zls.setup({
-              capabilities = capabilities,
-              cmd = { "zls" },
-              filetypes = { "zig", "zir" },
-              root_dir = lspconfig.util.root_pattern("build.zig", ".git"),
-              single_file_support = true,
-            })
-          end,
-				},
-			})
-		end,
-	},
-}
+require("mason").setup()
+require("blink.cmp").setup({
+  keymap = {
+    preset = "default",
+    ["<Tab>"] = { "snippet_forward", "select_and_accept", "fallback" },
+    ["<S-Tab>"] = { "snippet_backward", "select_prev", "fallback" },
+  },
+  appearance = {
+    nerd_font_variant = "mono",
+  },
+  completion = {
+    documentation = { auto_show = false },
+    trigger = { prefetch_on_insert = false },
+  },
+  sources = {
+    default = { "lsp", "path", "snippets", "buffer" },
+  },
+  signature = { enabled = true },
+})
+
+vim.lsp.config("*", {
+  capabilities = require("blink.cmp").get_lsp_capabilities(),
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(event)
+    local opts = { buffer = event.buf }
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+    vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts)
+  end,
+})
+
+vim.lsp.config("gopls", {
+    settings = {
+      gopls = {
+        staticcheck = false,
+      },
+    },
+})
+
+vim.lsp.config("terraformls", {
+  settings = {
+    terraformls = {
+      formatting = {
+        timeout_ms = 5000,
+      },
+    },
+  },
+})
+
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "lua_ls",
+    "bashls",
+    "clangd",
+    "dockerls",
+    "gopls",
+    "jsonls",
+    "pyright",
+    "vimls",
+    "terraformls",
+    "tflint",
+    "sqls",
+  },
+  automatic_enable = true,
+})
