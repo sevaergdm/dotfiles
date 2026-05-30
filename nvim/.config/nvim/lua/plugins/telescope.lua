@@ -34,7 +34,7 @@ telescope.setup({
       "--column",
       "--smart-case",
       "--hidden",
-      "no-ignore-vcs",
+      "--no-ignore-vcs",
     },
   },
 

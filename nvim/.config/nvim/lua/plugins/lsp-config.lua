@@ -41,6 +41,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim", "hl" },
+      },
+    },
+  },
+})
+
 vim.lsp.config("gopls", {
     settings = {
       gopls = {

@@ -21,3 +21,15 @@ set.number = true
 set.cursorline = true
 
 vim.diagnostic.config({ virtual_text = true })
+
+-- Reload files changed outside of neovim
+set.autoread = true
+set.updatetime = 1000
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  desc = "Auto-reload buffers when file changes on disk",
+  callback = function()
+    if vim.fn.getcmdwintype() == "" and vim.bo.buftype == "" then
+      vim.cmd("checktime")
+    end
+  end,
+})

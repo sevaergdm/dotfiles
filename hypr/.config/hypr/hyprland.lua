@@ -384,14 +384,9 @@ hl.window_rule({
 
 hl.layer_rule({ match =  { namespace = "waybar" }, blur = true })
 hl.layer_rule({ match =  { namespace = "logout_dialog" }, blur = true })
---hl.layer_rule({ match =  { namespace = "rofi" }, unset = true })
-hl.layer_rule({ match =  { namespace = "rofi" }, blur = true })
-hl.layer_rule({ match =  { namespace = "rofi" }, ignore_alpha = true })
+hl.layer_rule({ match =  { namespace = "rofi" }, blur = true, xray = true })
 hl.layer_rule({ match =  { namespace = "swaync-control-center" }, blur = true, ignore_alpha = 0.1 })
---hl.layer_rule({ match =  { namespace = "swaync-control-center" }, ignorealpha = 0.1 })
 hl.layer_rule({ match =  { namespace = "swaync-notification-window" }, blur = true, ignore_alpha = 0.1 })
---hl.layer_rule({ match =  { namespace = "swaync-notification-window" }, ignore_alpha = true })
---hl.layer_rule({ match =  { namespace = "swaync-notification-window" }, ignorealpha = 0.1 })
 
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
