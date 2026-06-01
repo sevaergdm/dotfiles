@@ -102,7 +102,7 @@
       "default": ["[S]", "[S]", "[S]", "[S]"]
     },
     "scroll-step": 5.0,
-    "on-click": "pavucontrol -t 3",
+    "on-click": "hyprctl dispatch 'hl.dsp.exec_cmd(\"pavucontrol -t 3\")' >/dev/null 2>&1",
     "tooltip-format": "{icon} {desc} | {volume}%",
     "smooth-scrolling-threshold": 1
   },
