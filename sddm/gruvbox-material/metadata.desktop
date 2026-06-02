@@ -1,0 +1,10 @@
+[SddmGreeterTheme]
+Name=Gruvbox Material
+Description=Gruvbox Material Hard Dark greeter, matching the dotfiles hyprlock layout
+Author=sevaergdm
+Type=sddm-theme
+Version=1.0
+MainScript=Main.qml
+ConfigFile=theme.conf
+Theme-Id=gruvbox-material
+Theme-API=2.0
