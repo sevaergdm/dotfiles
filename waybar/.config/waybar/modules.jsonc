@@ -18,8 +18,8 @@
   },
   "clock": {
     "interval": 1,
-    "format": " [T] {:%H:%M} ",
-    "format-alt": " [T] {:%H:%M  [D]  %Y, %d %B, %A} ",
+    "format": " 󰥔 {:%H:%M} ",
+    "format-alt": " 󰥔 {:%H:%M  󰃭  %Y, %d %B, %A} ",
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "mode": "year",
@@ -42,7 +42,7 @@
     }
   },
   "cpu": {
-    "format": " {usage}% [CPU] ",
+    "format": " {usage}%  ",
     "interval": 1,
     "on-right-click": "gnome-system-monitor"
   },
@@ -83,22 +83,22 @@
   },
   "memory": {
     "interval": 10,
-    "format": " {percentage}% [RAM] ",
+    "format": " {percentage}%  ",
     "format-alt-click": "click",
     "tooltip": true,
     "tooltip-format": "{used:0.1f}GB/{total:0.1f}G"
   },
   "pulseaudio": {
     "format": " {volume}% {icon} ",
-    "format-bluetooth": " [BT] {volume}% {icon} ",
-    "format-muted": "[MUTE]",
+    "format-bluetooth": "  {volume}% {icon} ",
+    "format-muted": "󰝟",
     "format-icons": {
-      "headphone": "[S]",
+      "headphone": "󰋋",
       "hands-free": "[S]",
-      "headset": "[S]",
-      "phone": "[S]",
+      "headset": "󰋎",
+      "phone": "󰏲",
       "portable": "[S]",
-      "car": "[S]",
+      "car": "󰄋",
       "default": ["[S]", "[S]", "[S]", "[S]"]
     },
     "scroll-step": 5.0,
@@ -122,8 +122,8 @@
     "tooltip": true,
     "format": " {} {icon} ",
     "format-icons": {
-      "notification": "[N]<span foreground='red'><sup>+</sup></span>",
-      "none": "[N]",
+      "notification": "󰎟<span foreground='red'><sup>+</sup></span>",
+      "none": "󰎟",
       "dnd-notification": "[DND]<span foreground='red'><sup>+</sup></span>",
       "dnd-none": "[DND]",
       "inhibited-notification": "[I]<span foreground='red'><sup>+</sup></span>",

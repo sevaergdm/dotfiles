@@ -34,7 +34,5 @@ else
 			wifi_password=$(rofi -dmenu -p "Password: ")
 		fi
 		nmcli device wifi connect "$chosen_id" password "$wifi_password" | grep "successfully" && notify-send -h string:x-canonical-private-synchronous:volume -e "Connection Established" "$success_message" -i "successfully.svg"
-		hl
-
 	fi
 fi
