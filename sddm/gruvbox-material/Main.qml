@@ -1,6 +1,6 @@
-import QtQuick
-import QtQuick.Controls
-import QtQuick.Layouts
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtQuick.Layouts 1.15
 
 Rectangle {
 	id: root
@@ -64,7 +64,7 @@ Rectangle {
 			font.family: uiFont
 			font.pixelSize: 96
 			font.bold: true
-			text: Qt.formatTime(timeSource.now, config.clockFormat || "HH:mm")
+			text: Qt.formatTime(timeSource.now, "HH:mm")
 		}
 		Text {
 			anchors.horizontalCenter: parent.horizontalCenter
@@ -72,7 +72,7 @@ Rectangle {
 			color: cFg
 			font.family: uiFont
 			font.pixelSize: 24
-			text: Qt.formatDate(timeSource.now, config.dateFormat || "dddd, d MMMM")
+			text: Qt.formatDate(timeSource.now, "dddd, d MMMM")
 		}
 	}
 
