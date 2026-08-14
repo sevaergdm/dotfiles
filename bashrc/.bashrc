@@ -6,6 +6,15 @@ case $- in
       *) return;;
 esac
 
+# yazi 
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  command yazi "$@" --cwd-file="$tmp"
+  IFS= read -r -d '' cwd < "$tmp"
+  [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
+  command rm -f -- "$tmp"
+}
+
 # History
 HISTCONTROL=ignoreboth # ignore duplicate lines and lines starting with space
 HISTSIZE=10000
@@ -48,17 +57,26 @@ if ! shopt -oq posix; then
 fi
 
 # Local enviornment shim (uv/cargo-style PATH)
-. "$HOME/.local/bin/env"
+if [ -f "$HOME/.local/bin/env" ]; then . "$HOME/.local/bin/env"; fi
 
 # Google Cloud SDK
 if [ -f "$HOME/google-cloud-sdk/path.bash.inc" ]; then . "$HOME/google-cloud-sdk/path.bash.inc"; fi
 if [ -f "$HOME/google-cloud-sdk/completion.bash.inc" ]; then . "$HOME/google-cloud-sdk/completion.bash.inc"; fi
 
-# Prompt
-eval "$(starship init bash)"
 
 # Locale: want english with Swedish currency and metric measurements + ISO 8601 dates
 export LC_TIME="en_DK.UTF-8"
 export LC_MONETARY="sv_SE.UTF-8"
 export LC_MEASUREMENT="en_DK.UTF-8"
 export LC_NUMERIC="en_DK.UTF-8"
+
+# editor settings
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# uv
+export PATH="$HOME/.local/bin:$PATH"
+
+PROMPT_COMMAND='history -a'
+# Prompt
+eval "$(starship init bash)"
