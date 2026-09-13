@@ -116,7 +116,7 @@
     "critical-threshold": 82,
     "format-critical": "{temperatureC}°C {icon}",
     "format-icons": ["[T]"],
-    "on-click-right": "ghostty --config ~/.config/ghostty/config --title nvtop -e sh -c 'nvtop'" 
+    "on-click-right": "ghostty --config=~/.config/ghostty/config --title=nvtop -e sh -c 'nvtop'" 
   },
   "custom/swaync": {
     "tooltip": true,
@@ -143,7 +143,7 @@
     "format-ethernet": " 󰈀",
     "format-disconnected": " 󰤠",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)",
-    "on-click": "ghostty --title nmtui -e nmtui >/dev/null 2>&1",
+    "on-click": "ghostty --config=~/.config/ghostty/config --title=nmtui -e nmtui >/dev/null 2>&1",
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
   },
   "custom/poweroff": {
