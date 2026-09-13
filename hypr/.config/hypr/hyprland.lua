@@ -365,7 +365,7 @@ hl.window_rule({
   name = "float-nmtui",
   match = { class = "com.mitchellh.ghostty", title = "^nmtui$" },
   float = true,
-  size = "700 450",
+  size = {700, 450},
 })
 
 hl.window_rule({
