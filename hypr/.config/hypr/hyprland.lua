@@ -362,6 +362,13 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 -- Example window rules that are useful
 
 hl.window_rule({
+  name = "float-nmtui",
+  match = { class = "com.mitchellh.ghostty", title = "^nmtui$" },
+  float = true,
+  size = "700 450",
+})
+
+hl.window_rule({
     -- Ignore maximize requests from all apps. You'll probably like this.
     name  = "suppress-maximize-events",
     match = { class = ".*" },
